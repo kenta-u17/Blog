@@ -12,8 +12,9 @@ class Blog extends Model
 
     protected $casts = [
         'is_open' => 'boolean',
-        'body' => 'collection',
     ];
+
+    protected $guarded = [];
 
     public function user()
     {

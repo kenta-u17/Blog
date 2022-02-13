@@ -12,7 +12,7 @@
 @foreach($blog->comments as $comment)
     <hr>
     <p>{{ $comment->name }} <small>（{{ $blog->updated_at }}）</small></p>　
-    <p>{{!! nl2br(e($comment->body)) !!}}</P>
+    <p>{!! nl2br(e($comment->body)) !!}</P>
 @endforeach
 
 @endsection

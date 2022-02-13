@@ -1,5 +1,7 @@
 nav {
-  display:flex;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 nav li {
@@ -14,4 +16,13 @@ table {
 
 td {
   padding: 30px;
+  
+}
+
+th {
+  margin-left: 100px;
+}
+
+.blog_mini {
+  margin-left: 100px;
 }
