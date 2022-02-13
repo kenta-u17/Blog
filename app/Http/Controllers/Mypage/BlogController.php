@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Blog;
+use App\Http\Requests\BlogSaveRequest;
 
 class BlogController extends Controller
 {
@@ -72,22 +73,26 @@ class BlogController extends Controller
     /**
      * ブログの変更処理
      */
-    public function update(Blog $blog, Request $request)
+    public function update(Blog $blog, BlogSaveRequest $request)
     {
-        //自分のブログに限定
-        if ($request->user()->isNot($blog->user)) {
-            abort(403);
-        }
+        abort_if($request->user()->isNot($blog->user), 403);
 
-        $data = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'body' => ['required', 'string'],
-            'is_open' => ['nullable'],
-        ]);
+        $data = $request->proceed();
 
         $blog->update($data);
 
         return redirect(route('mypage.blog.update', $blog))->with('message', 'ブログを更新しました');
+    }
 
+    public function destroy(Blog $blog, Request $request)
+    {
+        abort_if($request->user()->isNot($blog->user),403);
+
+        //付属するコメントは、イベントを使って削除します。
+        //Models/Blog 参照。
+
+        $blog->delete();
+
+        return redirect('mypage');
     }
 }
