@@ -5,6 +5,10 @@
 <h1>{{ $blog->title }}</h1>
 <div>{!! nl2br(e($blog->body)) !!}</div>
 
+@if($blog->pict)
+<P><img src="{{ Storage::url($blog->pict) }}" alt="" srcset=""></p>
+@endif
+
 <p>name: {{ $blog->user->name }}</P>
 
 <h2>コメント</h2>

@@ -1,20 +1,23 @@
-nav ul {
+nav {
   display: flex;
   margin: 0;
   padding: 0;
 }
+
 nav li {
   margin: 10px;
   list-style: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-td {
-  padding: 5px;
-}
 
+td {
+  padding: 30px;
+  
+}
 
 th {
   margin-left: 100px;

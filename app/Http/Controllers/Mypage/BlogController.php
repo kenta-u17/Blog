@@ -49,6 +49,10 @@ class BlogController extends Controller
             'is_open' => ['nullable'],
         ]);
 
+        if ($request->hasFile('pict')) {
+            $data['pict'] = $request->file('pict')->store('blogs', 'public');
+        }
+
         $blog = $request->user()->blogs()->create($data);
 
         return redirect(route('mypage.blog.edit', $blog))->with('message', '新規登録しました');
@@ -67,7 +71,7 @@ class BlogController extends Controller
 
         $data = old() ?: $blog;
 
-        return view('mypage.blog.edit', compact('data'));
+        return view('mypage.blog.edit', compact('blog','data'));
     }
 
     /**
@@ -78,6 +82,12 @@ class BlogController extends Controller
         abort_if($request->user()->isNot($blog->user), 403);
 
         $data = $request->proceed();
+
+        if ($request->hasFile('pict')) {
+            //古い画像の削除
+
+            $data['pict'] = $request->file('pict')->store('blogs', 'public');
+        }
 
         $blog->update($data);
 
