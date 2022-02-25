@@ -3,13 +3,17 @@
 @section('content')
 
 <h1>ブログ一覧</h1>
+<hr>
 
-<ul>
+<div >
     @foreach($blogs as $blog)
-    <li><a href="{{ route('blog.show', $blog)}}">{{ $blog->title }} </a>
-      {{ $blog->user->name }} 
+    <div class="card_box">
+        <div class="card__imgframe" >
+            <img src="{{ Storage::url($blog->pict) }}" alt="" srcset="" width="150"></div>
+        <div class="card__titletext" type="button" onclick=location.href="{{ route('blog.show', $blog)}}">{{ $blog->title }}</div>
+        {{ $blog->user->name }} 
           （{{ $blog->comments_count }}件のコメント） <small>{{ $blog->updated_at }}</small>
-    </li> 
+    </div> 
 
     <!-- <! <li>{{ $blog->title }} {{ $blog->user ? $blog->user->name : '(退会者)' }}</li> 存在しないデータに対応 --> 
 
@@ -19,7 +23,7 @@
 
     <!-- <li>{{ $blog->title }} {{ optional($blog->user)->name }}</li> -->
     @endforeach
-</ul>
+</div>
 
 
 @endsection

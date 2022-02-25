@@ -13,7 +13,7 @@
   </tr>
 
   @foreach($blogs as $blog)
-  <div class="blog">
+  <div class="card_box">
     <td>
       <a href="{{ route('mypage.blog.edit', $blog) }}">{{ $blog->title }}</a>
     </td>

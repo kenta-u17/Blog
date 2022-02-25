@@ -11,10 +11,17 @@
 
 @include('inc.message')
 
-メ-ルアドレス：<input type="text" name="email" value="{{ old('email' )}}">
+<div>
+  <label>メールアドレス：</label>
+  <input type="text" name="email" value="{{ old('email' )}}">
+</div>
+
+<div>
+  <label>パスワード：</label>
+  <input type="password" name="password" >
+</div>
+
 <br>
-パスワード：<input type="password" name="password" >
-<br><br>
 <input type="submit" value=" 送信する ">
 
 </form>

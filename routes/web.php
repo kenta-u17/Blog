@@ -5,9 +5,15 @@ use App\Http\Controllers\Mypage\BlogController;
 use App\Http\Controllers\Mypage\UserLoginController;
 use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentsController;
+
 
 Route::get('', [HomeController::class, 'index']);
 Route::get('blogs/{blog}', [HomeController::class, 'show'])->name('blog.show');
+Route::post('blogs/{blog}', [HomeController::class, 'show'])->name('blog.show');
+
+// Route::get('blogs/{blog}', [CommentsController::class, 'create'])->name('blog.show');
+// Route::post('blogs/{blog}', [CommentsController::class, 'store'])->name('blog.show');
 
 Route::get('signup', [SignupController::class, 'index']);
 Route::post('signup', [SignupController::class, 'store']);
@@ -19,7 +25,6 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('mypage/logout', [UserLoginController::class, 'logout']);
-
     Route::get('mypage', [BlogController::class, 'index']);
     Route::get('mypage/blogs/create', [BlogController::class, 'create']);
     Route::post('mypage/blogs/create', [BlogController::class, 'store']);

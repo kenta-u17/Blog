@@ -2,25 +2,29 @@
 
 @section('content')
 
-<h1>ユーザー登録</h1>
+<h1>新規ユーザー登録</h1>
 
 <form method="post">
 @csrf
 
 @include('inc.error')
 
-名前:<input type="text" name="name" value="{{old('name')}}">
-<br>
-メルアド:<input type="text" name="email" value="{{ old('email' )}}">
-<br>
-パスワード:<input type="password" name="password" >
-<br>
-都道府県:<x-pref class="dd" id="myid"  :default="old('pref')"/>
-<br>
-住所：<input type="text" name="address" value="{{ old('address')}}">
-（福岡県の場合必須）
+<div>
+  <label>名前：</label>
+  <input type="text" name="name" value="{{old('name')}}">
+</div>
 
-<br><br>
+<div>
+  <label>メールアドレス：</label>
+  <input type="text" name="email" value="{{ old('email' )}}">
+</div>
+
+<div>
+  <label>パスワード：</label>
+  <input type="password" name="password" >
+</div>
+
+<br>
 <input type="submit" value=" 送信する ">
 
 </form>

@@ -1,0 +1,56 @@
+nav {
+  display: flex;
+}
+
+nav li {
+  margin: 25px;
+  list-style: none; 
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  padding: 30px;
+  display: flex;
+  
+}
+
+th {
+  margin-left: 100px;
+}
+
+.blog_mini {
+  margin-left: 100px;
+}
+
+div.back {
+  position:absolute;
+	right: 50px;
+}
+
+div.card_box {
+  
+  width: 796px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+}
+
+.card {
+  width: 288px;
+  height: auto;
+}
+
+div.body {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: khaki;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 17px;
+}

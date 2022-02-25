@@ -19,6 +19,8 @@ class HomeController extends Controller
         return view('home', compact('blogs'));
     }
 
+    
+
     public function show(Blog $blog)
     {
         //非公開のものは見られないようにする

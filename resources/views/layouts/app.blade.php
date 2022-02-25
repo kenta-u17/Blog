@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ブログ</title>
-  <link type="text/css" rel="stylesheet" href="/css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
           <li>
             <form method="post" action="/mypage/logout">
               @csrf
-              <input type="submit" value="ログアウト" >
+              <div class="back"><input type="submit" value="ログアウト" ></div>
             </form>
           </li> 
       @else

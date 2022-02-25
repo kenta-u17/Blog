@@ -55,6 +55,9 @@ class BlogController extends Controller
 
         $blog = $request->user()->blogs()->create($data);
 
+        // 二重送信対策
+        $request->session()->regenerateToken();
+
         return redirect(route('mypage.blog.edit', $blog))->with('message', '新規登録しました');
 
     }
@@ -85,6 +88,7 @@ class BlogController extends Controller
 
         if ($request->hasFile('pict')) {
             //古い画像の削除
+            $blog->deletePictFile();
 
             $data['pict'] = $request->file('pict')->store('blogs', 'public');
         }
@@ -94,6 +98,9 @@ class BlogController extends Controller
         return redirect(route('mypage.blog.update', $blog))->with('message', 'ブログを更新しました');
     }
 
+    /**
+     * ブログの削除
+     */
     public function destroy(Blog $blog, Request $request)
     {
         abort_if($request->user()->isNot($blog->user),403);
