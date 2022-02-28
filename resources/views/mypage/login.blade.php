@@ -11,7 +11,7 @@
 
 @include('inc.message')
 
-<div>
+<div class="mail">
   <label>メールアドレス：</label>
   <input type="text" name="email" value="{{ old('email' )}}">
 </div>

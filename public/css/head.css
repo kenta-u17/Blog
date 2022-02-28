@@ -1,0 +1,105 @@
+nav {
+  display: flex;
+}
+
+nav li {
+  margin: 25px;
+  list-style: none; 
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  padding: 30px;
+  display: flex;
+  margin-left: 10px;
+}
+
+th {
+  margin-left: 100px;
+}
+
+.blog_mini {
+  margin-left: 100px;
+}
+
+div.back {
+  position:absolute;
+	right: 50px;
+}
+
+div.card_flame {
+  margin-left: auto;
+  margin-right: auto;
+  
+  max-width: 880px;
+  width: 90%;
+  height: auto;
+  
+   /* 注目 */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+ 
+.card_flame > :nth-child(n+3){
+  margin-top: 20px;
+ 
+}  
+
+.card_flame > :not(:nth-child(3n-2)){
+  margin-left: 20px;
+}  
+
+div.card_box {
+  width: calc((100% - 20px * 2) / 3);
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2)
+}
+
+.card__imgframe{
+  width: 100%;
+  height: auto;
+  /* padding-top: 56.25%; */
+  background: #bbb;
+  box-sizing: border-box;
+}
+
+.card__textbox{
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.card__textbox > * + *{
+  margin-top: 10px;
+}
+
+.card__titletext{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+.card__overviewtext{
+  font-size: 12px;
+  line-height: 150%;
+}
+
+div.body {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #55C501;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 17px;
+}
+

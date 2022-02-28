@@ -17,7 +17,7 @@ function ajaxSubmit(form) {
 }
 </script>
 
-<div class="body">
+<div class="bodye">
   <h1>マイブログ新規作成</h1>
 
   <form method="post" enctype="multipart/form-data" onsubmit="return ajaxSubmit(this)">

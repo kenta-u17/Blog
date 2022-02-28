@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ブログ</title>
-  <link type="text/css" rel="stylesheet" href="css/header.css">
+  <link type="text/css" rel="stylesheet" href="css/head.css">
 </head>
 <body>
 
