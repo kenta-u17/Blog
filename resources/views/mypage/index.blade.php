@@ -2,26 +2,39 @@
 
 @section('content')
 
-<h1>マイブログ一覧</h1>
-
-<a href="/mypage/blogs/create">ブログ新規作成</a>
+<div class="blog_top">
+  <div class="my_blog_menu"><h1>マイブログ</h1>
+      <a class="newblogs" href="/mypage/blogs/create">
+        <img src="/storage/fonts/RfVNdODURCLJZIA1646098545_1646098610.png" alt="" height="26" class="img_color">
+        ブログを書く
+      </a>
+  </div>
+</div>
 <hr>
 
 <tabel>
-  <tr>
-    <th class="blog_mini">ブログ一覧</th>
-  </tr>
+  <div class="blogs_list">
+    <div class="blog_mini">ブログ一覧</div>
+  </div>
 
   @foreach($blogs as $blog)
   <div class="card_flame">
-    <td>
-      <a href="{{ route('mypage.blog.edit', $blog) }}">{{ $blog->title }}</a>
-    </td>
-    <td>
-      <form method="post" action="{{ route('mypage.blog.delete', $blog) }}">
-        @csrf @method('delete') <input type="submit" value="削除">
-      </form>
-    </td>
+    <div class="blogs_delete">
+      <div class="create_titles">
+        <a href="{{ route('mypage.blog.edit', $blog) }}">{{ $blog->title }}</a>
+        <div class="date">
+          <small>{{ $blog->updated_at }}</small>
+        </div>
+      </div>
+      <td>
+      <div class="delete">
+        <form method="post" action="{{ route('mypage.blog.delete', $blog) }}">
+          @csrf @method('delete') 
+            <input type="submit" value="削除">
+        </form>
+      </div>
+      </td>
+    </div>
   </div>
   @endforeach
 </table>

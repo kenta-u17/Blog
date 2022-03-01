@@ -8,22 +8,23 @@
 <body>
 
 <div class= "body">
-  <nav>
-      <li><a href="/">TOP（ブログ一覧）</a></li>
+  <div class="head_text">
+      <div class="blogtop"><a class="menu_button" href="/">TOP（ブログ一覧）</a></div>
       @auth
-        <li>
-          <li><a href="/mypage">マイブログ一覧</a></li>
-          <li>ようこそ{{ auth()->user()->name }}さん！！</li>
-          <li>
+        <div class="title_text">
+          <div class="my_blogs"><a class="menu_button" href="/mypage">ブログ管理</a></div>
+          <div class="youser_names">ようこそ{{ auth()->user()->name }}さん！！</div>
+          <div class="back">
             <form method="post" action="/mypage/logout">
               @csrf
-              <div class="back"><input type="submit" value="ログアウト" ></div>
+              <div><input type="submit" value="ログアウト" ></div>
             </form>
-          </li> 
+          </div>
+        </div>
       @else
-        <li><a href="{{ route(('login')) }}">ログイン</a></li>
+        <div><a class href="{{ route(('login')) }}">ログイン</a></div>
       @endauth
-  </nav>
+  </div>
 </div>
 @yield('content')
 
