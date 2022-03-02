@@ -13,7 +13,7 @@ Route::get('blogs/{blog}', [HomeController::class, 'show'])->name('blog.show');
 Route::post('blogs/{blog}', [HomeController::class, 'show'])->name('blog.show');
 
 // Route::get('blogs/{blog}', [CommentsController::class, 'create'])->name('blog.show');
-// Route::post('blogs/{blog}', [CommentsController::class, 'store'])->name('blog.show');
+Route::post('blogs/{blog}/comment', [CommentsController::class, 'store'])->name('blog.show.comment');
 
 Route::get('signup', [SignupController::class, 'index']);
 Route::post('signup', [SignupController::class, 'store']);
@@ -31,5 +31,5 @@ Route::middleware('auth')->group(function () {
     Route::get('mypage/blogs/edit/{blog}', [BlogController::class, 'edit'])->name('mypage.blog.edit');
     Route::post('mypage/blogs/edit/{blog}', [BlogController::class, 'update'])->name('mypage.blog.update');
     Route::delete('mypage/blogs/delete/{blog}', [BlogController::class, 'destroy'])->name('mypage.blog.delete');
-}); 
+});
 

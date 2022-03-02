@@ -2,10 +2,11 @@
 
 @section('content')
 
+<div class="blogs_backgraund">
 <div class="blog_top">
-  <div class="my_blog_menu"><h1>マイブログ</h1>
+  <div class="my_blog_menu"><h1 class="top_title_group">マイブログ</h1>
       <a class="newblogs" href="/mypage/blogs/create">
-        <img src="/storage/fonts/RfVNdODURCLJZIA1646098545_1646098610.png" alt="" height="26" class="img_color">
+        <img src="/storage/fonts/RfVNdODURCLJZIA1646098545_1646098610.png" alt="" height="26" >
         ブログを書く
       </a>
   </div>
@@ -18,7 +19,7 @@
   </div>
 
   @foreach($blogs as $blog)
-  <div class="card_flame">
+  <div class="my_card_flame">
     <div class="blogs_delete">
       <div class="create_titles">
         <a href="{{ route('mypage.blog.edit', $blog) }}">{{ $blog->title }}</a>
@@ -39,4 +40,5 @@
   @endforeach
 </table>
 
+</div>
 @endsection

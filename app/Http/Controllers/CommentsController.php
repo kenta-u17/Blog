@@ -14,15 +14,13 @@ class CommentsController extends Controller
     }
 
     // request型で送られてくる
-    public function store(Request $request) {
-
+    public function store(Blog $blog, Request $request) {
         $post = new Comment();
         $post->name = $request->name;
         $post->body = $request->body;
-        $post->blog_id = 38;
+        $post->blog_id = $blog->id;
         $post->save();
-
-        return redirect('/');
+        return back()->withInput();
     }
 
     public function show(Blog $blog)

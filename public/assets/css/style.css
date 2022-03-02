@@ -14,37 +14,45 @@ th {
   margin-left: 100px;
 }
 
-
+.my_card_flame {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 880px;
+}
 
 div.card_flame {
+  margin-top: 34px;
   margin-left: auto;
   margin-right: auto;
   max-width: 880px;
   width: 90%;
   height: auto;
-  
+
    /* 注目 */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 30px 20px;
 }
- 
-.card_flame > :nth-child(n+3){
-  margin-top: 20px;
- 
-}  
 
-.card_flame > :not(:nth-child(3n-2)){
+/* .card_flame > :nth-child(n+3){
+  margin-top: 20px;
+
+}   */
+
+/* .card_flame > :not(:nth-child(3n-2)){
   margin-left: 20px;
-}  
+}   */
 
 div.card_box {
   width: calc((100% - 20px * 2) / 3);
   height: 320px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,.2)
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+
+
 }
 
 div img {
@@ -83,7 +91,7 @@ div img {
 }
 
 body {
-  margin:0; 
+  margin:0;
   padding: 0;
 }
 
@@ -148,12 +156,6 @@ div.blogtop {
   font-size: 20px;
 }
 
-.blog_top {
-  width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my_blog_menu {
   display: flex;
   margin-top: auto;
@@ -190,7 +192,7 @@ div.blogtop {
 
 .newblogs {
   display       : inline-block;
-  border-radius : 7%;          /* 角丸       */
+  border-radius: 100vh;
   font-size     : 15pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
@@ -230,3 +232,167 @@ div.blogtop {
   margin-top: auto;
 }
 
+.blog_body {
+  width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0%;
+  padding: 0%;
+}
+
+.blog_comments {
+  margin-top: 170px;
+}
+
+.blog_font {
+  text-align: center;
+}
+
+
+.create_comments{
+  width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+.top_title_group {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.blog_top {
+  width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.youser_name {
+  margin-top: 70px;
+  margin-left: 670px;
+}
+
+.blogs_backgraund {
+  background-color: #F6F6F4;
+  width: 100%;
+  height: 100%;
+  min-height:100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.blog_login {
+  display       : inline-block;
+  border-radius: 100vh;
+  font-size     : 10pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 25px;   /* 余白       */
+  background    : #ffffff;     /* 背景色     */
+  color         : #55c501;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #55dd50;    /* 枠の指定 */
+  text-decoration: none;
+  height: 13px;
+  margin-right: 10px;
+}
+
+.new_login {
+  display       : inline-block;
+  border-radius: 100vh;
+  font-size     : 10pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 25px;   /* 余白       */
+  background    : #55c501;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #ffffff;    /* 枠の指定 */
+  text-decoration: none;
+  height: 13px;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.layer_img {
+  margin-right: 4px;
+  margin-bottom: 6px;
+}
+
+.blog_login_set {
+  margin: 0 0 0 auto;
+  display: flex;
+  margin-right: 35px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.login_top {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login_title {
+  text-align: center;
+}
+
+.login_mails {
+  width: 450px;
+  height: 54px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#blog_form {
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.login_form {
+  width: 450px;
+  height: 54px;
+  background    : #55c501;
+  color         : #ffffff;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.new_login_form {
+  width: 450px;
+  height: 54px;
+  display       : inline-block;
+  border-radius: 10px;
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  background    : #fefffd;     /* 背景色     */
+  color         : #1a1717;     /* 文字色     */
+  border        : 2px solid #0e0d0d;    /* 枠の指定 */
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.new_login_form_text {
+  font-size     : 13pt;        /* 文字サイズ */
+  margin-top: 12px;
+  margin-bottom: auto;
+}
+
+.message {
+  width: 450px;
+  height: 54px;
+  display       : inline-block;
+  border-radius: 10px;
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  background    : #fefffd;     /* 背景色     */
+  color         : #55c501;     /* 文字色     */
+  border        : 2px solid #0e0d0d;    /* 枠の指定 */
+  text-decoration: none;
+  margin-top: 10px;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ブログ</title>
-  <link type="text/css" rel="stylesheet" href="css/head.css">
+  <link type="text/css" rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
 </head>
 <body>
 
@@ -22,7 +22,15 @@
           </div>
         </div>
       @else
-        <div><a class href="{{ route(('login')) }}">ログイン</a></div>
+        <div class="blog_login_set">
+          <div><a class="blog_login" href="{{ route(('login')) }}">ログイン</a></div>
+          <div>
+            <a class="new_login" href="/signup">
+              <img src="/storage/fonts/icon_152072_256.png" alt="" height="19"  class="layer_img">
+              新規ユーザー登録
+            </a>
+          </div>
+        </div>
       @endauth
   </div>
 </div>
