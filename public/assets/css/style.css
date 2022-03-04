@@ -614,3 +614,38 @@ div.blogtop {
 #src_font {
     margin-right: 10px;
 }
+
+.paginations {
+    text-align: center;
+    height: auto;
+    margin-bottom:  100px;
+    padding-bottom: 80px;
+    padding-top: 50px;
+    background-color: #55c501;
+}
+
+.pagination li {
+    display: inline-block;
+    font-size: 27px;
+    padding-bottom: 13px;
+}
+
+.pagintion_box {
+    height: auto;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.pagination a{
+    text-decoration: none;
+    color: white;
+    padding: 0px 5px;
+}
+
+.pagination li {
+    padding: 0px 6px;
+}
+
+

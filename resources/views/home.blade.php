@@ -35,4 +35,11 @@
             @endforeach
         </div>
     </div>
+
+    <div class="paginations">
+        {{ $blogs->links('vendor.pagination.custom') }}
+        {{ $blogs->total() }}件中/
+        {{ $blogs->firstItem() }}〜{{ $blogs->lastItem() }} 件を表示
+    </div>
+
 @endsection
