@@ -1,56 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="blog_top">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            function ajaxSubmit(form) {
+                axios.post('/mypage/blogs/create', new FormData(form))
+                    .then(function(response) {
+                        console.log(response);
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
 
-<div class="blog_top">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
-  function ajaxSubmit(form) {
-    axios.post('/mypage/blogs/create',new FormData(form))
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+                return fales;
+            }
+        </script>
 
-    return fales;
-  }
-  </script>
+        <div class="bodye">
+            <h1 class="top_title_group">ブログ新規作成</h1>
 
-  <div class="bodye">
-    <h1>ブログ新規作成</h1>
+            <form method="post" enctype="multipart/form-data" onsubmit="return ajaxSubmit(this)">
+                @csrf
 
-    <form method="post" enctype="multipart/form-data" onsubmit="return ajaxSubmit(this)">
-    @csrf
+                @include('inc.error')
 
-    @include('inc.error')
+                @include('inc.message')
 
-    @include('inc.message')
+                <div class="create_title">
+                    <input type="text" name="title" id="create_title_text" value="{{ old('title') }}"
+                        placeholder="タイトルを入力して下さい">
+                </div>
 
-    <div>
-    <label>タイトル：</label>
-    <input type="text" name="title" style="width:400px" value="{{ old('title') }}">
+                <div class="create_body">
+                    <label>本文：</label>
+                    <textarea name="body" id="create_textbox">{{ old('body') }}</textarea>
+                </div>
+
+                <div>
+                    <label>公開する：</label>
+                    <label><input type="checkbox" name="is_open" value="1"
+                            {{ old('is_open') ? 'checked' : '' }}>公開する</label>
+                </div>
+
+                <div class="font_Choice">
+                    <label>画像：</label>
+                    <input type="file" name="pict">
+                </div>
+                <br>
+                <input class="post_blog" type="submit" value="投稿する">
+
+            </form>
+        </div>
     </div>
-
-    <div>
-    <label>本文：</label>
-    <textarea name="body" style="width:600px; height:200px;">{{ old('body') }}</textarea>
-    </div>
-
-    <div>
-    <label>公開する：</label>
-    <label><input type="checkbox" name="is_open" value="1" {{ (old('is_open') ? 'checked' : '') }}>公開する</label>
-    </div>
-
-    <div>
-    <label>画像：</label>
-    <input type="file" name="pict">
-    </div>
-    <br>
-    <input type="submit" value="送信する">
-
-    </form>
-  </div>
-</div>
 @endsection

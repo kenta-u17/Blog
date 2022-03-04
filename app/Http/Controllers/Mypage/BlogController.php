@@ -40,9 +40,10 @@ class BlogController extends Controller
         return view('mypage.blog.create');
     }
 
-    
+
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'body' => ['required', 'string'],
@@ -58,7 +59,9 @@ class BlogController extends Controller
         // 二重送信対策
         $request->session()->regenerateToken();
 
-        return redirect(route('mypage.blog.edit', $blog))->with('message', '新規登録しました');
+        dd($blog);
+
+        // return redirect(route('mypage.blog.edit', $blog))->with('message', '記事が投稿されました！');
 
     }
 

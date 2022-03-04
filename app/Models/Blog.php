@@ -21,14 +21,14 @@ class Blog extends Model
     {
         static::deleting(function ($blog){
             $blog->deletePictFile();
-            
+
             //$blog->comments()->delete();
 
             $blog->comments->each(function ($comment) {
                 $comment->delete();
             });
         });
-    }   
+    }
 
     public function user()
     {
@@ -41,6 +41,12 @@ class Blog extends Model
     {
         return $this->hasMany(Comment::class)->oldest();
     }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 
     public function scopeOnlyOpen($query)
     {

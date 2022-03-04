@@ -1,5 +1,3 @@
 @if(session('message'))
-<div class="login_good">
-  <p class="message" style="color:green">{{ session('message')}}</P>
-</div>
+  <p class="message" >{{ session('message')}}</P>
 @endif
