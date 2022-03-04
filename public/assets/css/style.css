@@ -167,16 +167,16 @@ div.blogtop {
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
   padding       : 7px ;   /* 余白       */
+  padding-bottom: 5px;
   background    : #55c501;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
+  color         : #d9ebdf;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   transition    : .3s;         /* なめらか変化 */
   border        : 2px solid #55c501;    /* 枠の指定 */
 }
 
 .menu_button:hover {
-  color         : #55c501;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
+  color         : white;     /* 背景色     */
 }
 
 .youser_names {
@@ -444,7 +444,7 @@ div.blogtop {
   border-radius: 10px;
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  background    : #fefffd;     /* 背景色     */
+  background    : #ffffff;     /* 背景色     */
   color         : #55c501;     /* 文字色     */
   border        : 1px solid #55c501;    /* 枠の指定 */
   text-decoration: none;
@@ -461,9 +461,9 @@ div.blogtop {
   border-radius: 10px;
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  background    : #fefffd;     /* 背景色     */
+  background    : #ffffff;     /* 背景色     */
   color         : red;     /* 文字色     */
-  border        : 1px solid #000000;    /* 枠の指定 */
+  border        : 1px solid red;    /* 枠の指定 */
   text-decoration: none;
   font-size: 18px;
   margin-top: 17px;

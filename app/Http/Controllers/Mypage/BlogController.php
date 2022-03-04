@@ -18,9 +18,7 @@ class BlogController extends Controller
         return view('mypage.index', compact('blogs'));
     }
 
-    /**
-     * ブログの新規登録処理
-     */
+
     public function logout(Request $request)
     {
         Auth::logout();
@@ -40,15 +38,12 @@ class BlogController extends Controller
         return view('mypage.blog.create');
     }
 
-
-    public function store(Request $request)
+     /**
+     * ブログの新規登録処理
+     */
+    public function store(BlogSaveRequest $request)
     {
-
-        $data = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'body' => ['required', 'string'],
-            'is_open' => ['nullable'],
-        ]);
+        $data = $request->validated();
 
         if ($request->hasFile('pict')) {
             $data['pict'] = $request->file('pict')->store('blogs', 'public');
@@ -56,12 +51,10 @@ class BlogController extends Controller
 
         $blog = $request->user()->blogs()->create($data);
 
-        // 二重送信対策
+        /*二重送信対策*/
         $request->session()->regenerateToken();
 
-        dd($blog);
-
-        // return redirect(route('mypage.blog.edit', $blog))->with('message', '記事が投稿されました！');
+        return redirect(route('mypage.blog.edit', $blog))->with('message', '記事が投稿されました！');
 
     }
 
@@ -97,6 +90,9 @@ class BlogController extends Controller
         }
 
         $blog->update($data);
+
+         /*二重送信対策*/
+         $request->session()->regenerateToken();
 
         return redirect(route('mypage.blog.update', $blog))->with('message', 'ブログを更新しました');
     }
