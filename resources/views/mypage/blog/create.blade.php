@@ -20,7 +20,7 @@
         <div class="bodye">
             <h1 class="top_title_group">ブログ新規作成</h1>
 
-            <form method="post" enctype="multipart/form-data" onsubmit="return ajaxSubmit(this)">
+            <form method="post" enctype="multipart/form-data" onsubmit="retrun ajaxSubmit(this)">
                 @csrf
 
                 @include('inc.error')

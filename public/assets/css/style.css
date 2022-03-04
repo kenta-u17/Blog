@@ -405,6 +405,7 @@ div.blogtop {
   height: 54px;
   background    : #55c501;
   color         : #ffffff;
+  border        : 1px solid #55c501;
   margin-top: 40px;
   margin-bottom: 10px;
 }

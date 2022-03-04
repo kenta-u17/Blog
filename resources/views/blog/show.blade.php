@@ -11,7 +11,7 @@
             <div class="blog_body">
                 <div class="blog_font">
                     @if ($blog->pict)
-                        <p><img src="{{ Storage::url($blog->pict) }}" alt="" srcset="" width="680" class="show_img">
+                        <p><img src="{{ Storage::url($blog->pict) }}" alt="" srcset="" width="780" class="show_img">
                         </p>
                     @endif
                 </div>

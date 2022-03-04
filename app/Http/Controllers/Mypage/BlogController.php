@@ -18,20 +18,8 @@ class BlogController extends Controller
         return view('mypage.index', compact('blogs'));
     }
 
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('mypage/login')->with('message','ログアウトしました');
-    }
-
     /**
-     * ブログ新規作成画面
+     * ブログ新規登録画面
      */
     public function create()
     {
@@ -43,6 +31,9 @@ class BlogController extends Controller
      */
     public function store(BlogSaveRequest $request)
     {
+        /*二重送信対策*/
+        $request->session()->regenerateToken();
+
         $data = $request->validated();
 
         if ($request->hasFile('pict')) {
@@ -50,9 +41,6 @@ class BlogController extends Controller
         }
 
         $blog = $request->user()->blogs()->create($data);
-
-        /*二重送信対策*/
-        $request->session()->regenerateToken();
 
         return redirect(route('mypage.blog.edit', $blog))->with('message', '記事が投稿されました！');
 
@@ -78,6 +66,9 @@ class BlogController extends Controller
      */
     public function update(Blog $blog, BlogSaveRequest $request)
     {
+        /*二重送信対策*/
+        $request->session()->regenerateToken();
+
         abort_if($request->user()->isNot($blog->user), 403);
 
         $data = $request->proceed();
@@ -90,9 +81,6 @@ class BlogController extends Controller
         }
 
         $blog->update($data);
-
-         /*二重送信対策*/
-         $request->session()->regenerateToken();
 
         return redirect(route('mypage.blog.update', $blog))->with('message', 'ブログを更新しました');
     }
