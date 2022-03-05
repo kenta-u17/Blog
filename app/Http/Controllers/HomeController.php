@@ -16,7 +16,7 @@ class HomeController extends Controller
             ->onlyOpen()
             ->orderByDesc('comments_count')
             ->latest('updated_at') //orderByDesc('updated_at')
-            ->paginate(10);
+            ->paginate(36);
 
         return view('home', compact('blogs'));
     }

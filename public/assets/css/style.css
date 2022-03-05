@@ -648,4 +648,12 @@ div.blogtop {
     padding: 0px 6px;
 }
 
+.disabled_go {
+    color: #55c501;
+}
+
+.disabled_back {
+    color: #55c501;
+}
+
 
