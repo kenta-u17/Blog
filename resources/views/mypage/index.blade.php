@@ -23,7 +23,7 @@
                     <div class="blogs_delete">
                         <div class="create_titles">
                             <a href="{{ route('mypage.blog.edit', $blog) }}">
-                                <img src="/storage/fonts/pens.png" alt="" height="20" id="src_font">
+                                <img src="/storage/fonts/pens.svg" alt="" height="20" id="src_font">
                                 {{ $blog->title }}
                             </a>
                             <div class="date">
@@ -35,7 +35,7 @@
                                 <form method="post" action="{{ route('mypage.blog.delete', $blog) }}">
                                     @csrf @method('delete')
                                     <div class="delete_button">
-                                        <img src="/storage/fonts/icon_000550_32.png" alt="" height="24">
+                                        <img src="/storage/fonts/backet.svg" alt="" height="24">
                                         <input type="submit" value="削除" id="delete_input">
                                     </div>
                                 </form>

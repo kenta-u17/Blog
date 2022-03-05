@@ -11,7 +11,7 @@
 
     <div class="body">
         <div class="newHeader">
-            <img src="/storage/fonts/muscle.png" alt="" srcset="" class="muscle_font">
+            <img src="/storage/fonts/massle.svg" alt="" srcset="" class="muscle_font">
             <h1 id="muscle_title">筋肉BLOG</h1>
         </div>
         <div class="header_text">
