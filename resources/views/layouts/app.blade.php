@@ -23,7 +23,7 @@
                     <div class="back">
                         <form method="post" action="/mypage/logout">
                             @csrf
-                            <div><input type="submit" value="ログアウト" id="delete_input"></div>
+                            <div><input type="submit" value="ログアウト" id="elete_input"></div>
                         </form>
                     </div>
                 </div>
