@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ブログ</title>
-    <link type="text/css" rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
