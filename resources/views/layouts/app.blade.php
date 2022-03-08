@@ -32,7 +32,7 @@
                     <div><a class="blog_login" href="{{ route('login') }}">ログイン</a></div>
                     <div>
                         <a class="new_login" href="/signup">
-                            <img src="/storage/fonts/icon_152072_256.png" alt="" height="19" class="layer_img">
+                            <img src="/storage/app/public/fonts/icon_152072_256.png" alt="" height="19" class="layer_img">
                             新規ユーザー登録
                         </a>
                     </div>
