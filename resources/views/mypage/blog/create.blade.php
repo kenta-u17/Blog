@@ -38,7 +38,6 @@
                 </div>
 
                 <div class="open_check">
-                    <label>公開する：</label>
                     <label><input type="checkbox" name="is_open" value="1" id="checkbox_isopen"
                             {{ old('is_open') ? 'checked' : '' }}>公開する</label>
                 </div>

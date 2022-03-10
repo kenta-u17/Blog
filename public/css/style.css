@@ -163,6 +163,9 @@ div.header_text {
 div.title_text{
   display: flex;
 }
+
+
+
 /*    header部分        */
 
 .menu_button:hover {
@@ -499,9 +502,6 @@ div.back {
   margin-left: 15px;
 }
 
-.date {
-  margin-top: 8px;
-}
 
 .blog_body {
   width: 880px;
@@ -509,6 +509,14 @@ div.back {
   margin-right: auto;
   margin: 0%;
   padding: 0%;
+}
+
+.date {
+    margin-top: 8px;
+}
+
+#src_font {
+    margin-right: 10px;
 }
 
 .top_title_group {
@@ -519,6 +527,28 @@ div.back {
 @media screen and (max-width:980px){
     .top_title_group {
         font-size: 56px;
+    }
+
+    #blog_edit {
+        font-size: 40px;
+    }
+
+    #src_font {
+        width:45px
+    }
+
+    #delete_input {
+        width:100px;
+        font-size: 28px;
+    }
+
+    .date {
+        font-size: 30px;
+        margin-bottom: auto;
+    }
+
+    .blog_body_text {
+        font-size: 37px;
     }
 }
 
@@ -567,6 +597,10 @@ div.back {
     resize: none; /* リサイズ不可に */
 }
 
+.blog_body_text {
+    font-size: 20px;
+}
+
 .comment_body {
     height: 300px;
   width: 100%; /* 幅 */
@@ -603,7 +637,7 @@ div.back {
     }
 
     .youser_name {
-        font-size: 13px;
+        font-size: 20px;
         margin-left: auto;
     }
 
@@ -992,14 +1026,6 @@ div.login_form_set {
     .signup_text{
         font-size: 40px;
     }
-}
-
-.blog_body_text {
-    font-size: 20px;
-}
-
-#src_font {
-    margin-right: 10px;
 }
 
 .paginations {
