@@ -5,7 +5,7 @@
         <div class="my_blog_menu">
             <h1 class="top_title_group">マイブログ</h1>
             <a class="newblogs" href="/mypage/blogs/create">
-                <img src="/storage/fonts/RfVNdODURCLJZIA1646098545_1646098610.png" alt="" height="26">
+                <img src="/storage/fonts/RfVNdODURCLJZIA1646098545_1646098610.png" alt="" class="create_blog_img">
                 ブログを書く
             </a>
         </div>
@@ -13,7 +13,7 @@
     <hr>
 
     <div class="blogs_list">
-        <div class="blog_mini">ブログ一覧</div>
+        <h4 class="blog_mini">ブログ一覧</h4>
     </div>
 
     <tabel>

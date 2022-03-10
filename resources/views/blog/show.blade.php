@@ -24,8 +24,8 @@
                 <h2>コメント({{ $blog->comment()->count() }})</h2>
                 @foreach ($blog->comments as $comment)
                     <hr class="comment_line">
-                    <p>{{ $comment->name }} <small>（{{ $blog->updated_at }}）</small></p>
-                    <p class="blog_comment_body">{!! nl2br(e($comment->body)) !!}</P>
+                    <p>{{ $comment->name }} <small>（{{ $comment->updated_at }}）</small></p>
+                    <p class="blog_comment_body">{{($comment->body) }}</P>
                 @endforeach
             </div>
 

@@ -36,6 +36,7 @@
         </div>
     </div>
 
+
     <div class="paginations">
         {{ $blogs->links('vendor.pagination.custom') }}
         {{ $blogs->total() }}件中/

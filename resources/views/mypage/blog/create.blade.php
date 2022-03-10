@@ -37,18 +37,23 @@
                     <textarea name="body" id="create_textbox">{{ old('body') }}</textarea>
                 </div>
 
-                <div>
+                <div class="open_check">
                     <label>公開する：</label>
-                    <label><input type="checkbox" name="is_open" value="1"
+                    <label><input type="checkbox" name="is_open" value="1" id="checkbox_isopen"
                             {{ old('is_open') ? 'checked' : '' }}>公開する</label>
                 </div>
 
                 <div class="font_Choice">
                     <label>画像：</label>
-                    <input type="file" name="pict">
+                    <label class="upload-label">
+                        ファイルを選択
+                        <input type="file" name="pict" id="img_choice">
+                    </label>
                 </div>
-                <br>
-                <input class="post_blog" type="submit" value="投稿する">
+
+                <div class="post_blog_form">
+                    <input class="post_blog" type="submit" value="投稿する">
+                </div>
 
             </form>
         </div>
